@@ -1,0 +1,47 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+	
+	<bean id="student" class="com.suraj.bean.Student" scope="prototype">
+		
+	</bean>
+	
+	<bean id="studentCI" class="com.suraj.bean.Student">
+		<constructor-arg name="rollno" value="111" />
+		<constructor-arg name="name" value="pankaj" />
+	</bean>
+	
+	<bean id="studentSI" class="com.suraj.bean.Student">
+		<property name="rollno" value="121" />
+		<property name="name" value="tejas" />
+	</bean>
+	
+	<bean id="address" class="com.suraj.bean.Address">
+		<property name="city" value="pune" />
+		<property name="pin" value="411023" />
+	</bean>
+	
+	<bean id="person" class="com.suraj.bean.Person">
+		<property name="firstname" value="suraj" />
+		<property name="lastname" value="bhosale" />
+		<property name="address" ref="address" />
+	</bean>
+	
+	<bean id="date" class="com.suraj.bean.Date">
+		<property name="birthdate" value="19 june 1996" />
+		<property name="joindate" value="9 dec 2019" />
+	</bean>
+	
+	<bean id="employee" class="com.suraj.bean.Employee">
+		<property name="firstname" value="suraj" />
+		<property name="lastname" value="bhosale" />
+		<property name="date" ref="date" />
+	</bean>
+	
+	
+</beans>	
+	
